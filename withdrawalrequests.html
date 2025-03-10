@@ -9053,7 +9053,7 @@
     $(document).ready(async function () {
   var obtainfromls=localStorage.getItem("user")
   var parseResult=JSON.parse(obtainfromls)
-  console.log(parseResult);
+  
   $("#accountBalance").html(parseResult.balance)
   $("#profit").html(parseResult.profit)
     })
@@ -9605,7 +9605,7 @@ success: function () {
 }
 });
 
-console.log(response);
+
 return response.data
 
 }
@@ -9636,7 +9636,7 @@ success: function () {
 }
 });
 
-console.log(response);
+
 return response.data
 
 }

@@ -646,7 +646,7 @@
     $(document).ready(async function () {
   var obtainfromls=localStorage.getItem("user")
   var parseResult=JSON.parse(obtainfromls)
-  console.log(parseResult);
+  
   $("#accountBalance").html(parseResult.balance)
   $("#profit").html(parseResult.profit)
     })
@@ -1230,7 +1230,7 @@ $(document).ready(async function () {
     dataType: "json",
     timeout: 30000,
     success: async function (data) {
-      console.log("data", data);
+     
       Object.assign(currentUser, data.data)
     },
     error: function () {
@@ -1280,7 +1280,7 @@ async function updateProfile({  name, id,risk, drawdown, strategy ,frequency,pro
     }
   });
 
-  console.log(response);
+  
   return response.data
 }
 

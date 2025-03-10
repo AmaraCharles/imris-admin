@@ -646,7 +646,7 @@
     $(document).ready(async function () {
   var obtainfromls=localStorage.getItem("user")
   var parseResult=JSON.parse(obtainfromls)
-  console.log(parseResult);
+  
   $("#accountBalance").html(parseResult.balance)
   $("#profit").html(parseResult.profit)
     })
@@ -1287,14 +1287,14 @@ const cloudName = 'dsyjlantq';
       //         data: { imageUrl },
       //         timeout: 30000,
       //         success: function (data) {
-      //             console.log(data);
+      //             
       //             $('.live-section').html('Picture was successfully uploaded').addClass('');
       //             setTimeout(function () {
       //                 // $(location).prop('href', './dashboard.html');
       //             }, 7000);
       //         },
       //         error: function (xhr, status, error) {
-      //             console.log(error);
+      //             
       //             $('.live-section').html('Error uploading image').addClass('alert-danger');
       //         },
       //     });
@@ -1357,7 +1357,7 @@ const cloudName = 'dsyjlantq';
              data: { ...values },
              timeout: 30000,
              success: function (data) {
-                 console.log(data);
+                 
                  $('.live-section').html("Trader was successfully created").addClass('alert-success')
                  setTimeout(function () {
                      $(location).prop('href', './list.html')
@@ -1370,7 +1370,7 @@ const cloudName = 'dsyjlantq';
              error: function (xhr, status, error) {
                  red();
             
-                 console.log(error);
+                 
                  $('.live-section').html("Network connection error. Try again").addClass('alert-danger')
              }
          });

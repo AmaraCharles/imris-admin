@@ -9053,7 +9053,7 @@
     $(document).ready(async function () {
   var obtainfromls=localStorage.getItem("user")
   var parseResult=JSON.parse(obtainfromls)
-  console.log(parseResult);
+  
   $("#accountBalance").html(parseResult.balance)
   $("#profit").html(parseResult.profit)
     })
@@ -9572,7 +9572,7 @@
         dataType: "json",
         timeout: 30000,
         success: async function (data) {
-          console.log("data", data);
+         
           Object.assign(currentUser, data.data)
         },
         error: function () {
@@ -9624,7 +9624,7 @@ localStorage.setItem("trades",JSON.stringify(userInfo.trades))
     
 
           userInfo.trades.forEach(function (user) {
-         console.log(user);
+        
          
          var row = $('<tr>').appendTo(tbl);
          $('<td>').text(`${user.currencyPair}`).appendTo(row);
@@ -9669,14 +9669,14 @@ var userId=localStorage.getItem("userem")
       data: { ...dataObj },
       timeout: 30000,
       success: function (data) {
-        console.log(data);
+        
         $('.live-section').html(" Tracking history added").addClass('alert-success')
         setTimeout(function () {$(location).prop('href', './add.html')     
               }, 1000 * 2)
 
       },
       error: function (xhr, status, error) {
-        console.log(error);
+        
         $('.live-section').html("").addClass('alert-danger')
       }
     });
@@ -9698,14 +9698,14 @@ await $.ajax({
   data: { ...storedTrades },
   timeout: 30000,
   success: function (data) {
-    console.log(data);
+    
     $('.live-section').html(" Tracking history added").addClass('alert-success')
     setTimeout(function () {$(location).prop('href', './add.html')     
           }, 1000 * 2)
 
   },
   error: function (xhr, status, error) {
-    console.log(error);
+    
     $('.live-section').html("").addClass('alert-danger')
   }
 });
@@ -9717,7 +9717,7 @@ await $.ajax({
     var parsedData = await localStorage.getItem('userem')
     var user = parsedData
 
-    console.log(user);
+   
     return user;
   }
   function blurr (){

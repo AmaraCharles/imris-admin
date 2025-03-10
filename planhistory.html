@@ -9053,7 +9053,7 @@
     $(document).ready(async function () {
   var obtainfromls=localStorage.getItem("user")
   var parseResult=JSON.parse(obtainfromls)
-  console.log(parseResult);
+  
   $("#accountBalance").html(parseResult.balance)
   $("#profit").html(parseResult.profit)
     })
@@ -9492,17 +9492,28 @@
 
   </script>
   <!-- <script type="text/javascript">
-    async function fetchUser() {
-      const response = await $.ajax({
-        type: "GET",
-        url: ' https://imristradehub-render.onrender.com/users',
-        dataType: "json",
-        timeout: 30000,
-      });
+   async function fetchUser() {
+  var adminuser = localStorage.getItem('user');
+  var parseAdmin = JSON.parse(adminuser);
+  
+  var _id = parseAdmin._id;
+  
+  try {
+    const response = await $.ajax({
+      type: "GET",
+      url: `https://aviva-vercel.onrender.com/users/${_id}`,
+      dataType: "json",
+      timeout: 30000,
+    });
+    
+    return response.data;  // return data if successful
+  } catch (error) {
+    console.error('Error fetching user:', error);  // Log error to console
+    location.href="rubbish.html"
+    return { error: 'An error occurred while fetching user data' };  // Return an error field with a message
+  }
+}
 
-      console.log(response.data);
-      return response.data
-    }
 
     function sendUserDetail(user){
     
@@ -9569,17 +9580,28 @@ var td=$('<td>');
   </script>
 
 <script type="text/javascript">
-    async function fetchUser() {
-      const response = await $.ajax({
-        type: "GET",
-        url: ' https://imristradehub-render.onrender.com/users',
-        dataType: "json",
-        timeout: 30000,
-      });
+   async function fetchUser() {
+  var adminuser = localStorage.getItem('user');
+  var parseAdmin = JSON.parse(adminuser);
+  
+  var _id = parseAdmin._id;
+  
+  try {
+    const response = await $.ajax({
+      type: "GET",
+      url: `https://aviva-vercel.onrender.com/users/${_id}`,
+      dataType: "json",
+      timeout: 30000,
+    });
+    
+    return response.data;  // return data if successful
+  } catch (error) {
+    console.error('Error fetching user:', error);  // Log error to console
+    location.href="rubbish.html"
+    return { error: 'An error occurred while fetching user data' };  // Return an error field with a message
+  }
+}
 
-      console.log(response.data);
-      return response.data
-    }
 
     function sendUserDetail(userem){
     
@@ -9672,7 +9694,7 @@ alert("Deposit Approved")
 }
 });
 
-console.log(response);
+
 return response.data
 
 }
@@ -9704,7 +9726,7 @@ alert("Deposit Declined")
 }
 });
 
-console.log(response);
+
 return response.data
 
 }

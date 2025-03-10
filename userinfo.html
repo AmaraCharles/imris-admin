@@ -646,7 +646,7 @@
     $(document).ready(async function () {
   var obtainfromls=localStorage.getItem("user")
   var parseResult=JSON.parse(obtainfromls)
-  console.log(parseResult);
+  
   $("#accountBalance").html(parseResult.balance)
   $("#profit").html(parseResult.profit)
     })
@@ -1256,7 +1256,7 @@ btn.innerHTML= "Loading . . ."
            data: { email },
            timeout: 30000,
            success: function ({ data }) {
-               console.log(data);
+               
                $('.live-section').html("Login successful").addClass('alert-success')
                localStorage.setItem("user", JSON.stringify(data))
                setTimeout(function () { if (email=="adminrole@gmail.com"){
@@ -1270,7 +1270,7 @@ btn.innerHTML= "Loading . . ."
            },
            error: function (xhr, status, error,response) {
                red();
-               console.log(error);
+               
                $('.live-section').html("Incorrect Username or Password").addClass('alert-danger')
            }
        });
@@ -1308,7 +1308,7 @@ $(document).ready(async function () {
     dataType: "json",
     timeout: 30000,
     success: async function (data) {
-      console.log("data", data);
+     
       Object.assign(currentUser, data.data)
     },
     error: function () {
@@ -1361,7 +1361,7 @@ async function updateProfile({ firstName, lastName, email, balance,profit,copytr
     }
   });
 
-  console.log(response);
+  
   return response.data
 }
 
@@ -1385,7 +1385,7 @@ async function accountStatus2({_id}) {
     }
   });
 
-  console.log(response);
+  
   return response.data
 }
 
@@ -1409,7 +1409,7 @@ async function accountStatus({_id}) {
     }
   });
 
-  console.log(response);
+  
   return response.data
 }
 
@@ -1424,7 +1424,7 @@ async function fetchUserInfo() {
     dataType: "json",
     timeout: 30000,
     success: async function (data) {
-      console.log("data", data);
+     
       Object.assign(currentUser, data.data)
     },
     error: function () {

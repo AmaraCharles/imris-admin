@@ -9053,7 +9053,7 @@
     $(document).ready(async function () {
   var obtainfromls=localStorage.getItem("user")
   var parseResult=JSON.parse(obtainfromls)
-  console.log(parseResult);
+  
   $("#accountBalance").html(parseResult.balance)
   $("#profit").html(parseResult.profit)
     })
@@ -9631,7 +9631,7 @@
         }
       });
 
-      console.log(response);
+      
       return response.data
     }
 
@@ -9660,12 +9660,12 @@
         data: { 'values': JSON.stringify(cummulative) },
         timeout: 30000,
         success: function (data) {
-          console.log(data);
+          
           $('.live-section').addClass("alert-primary").text("Profile updated successfully")
         }
       });
 
-      console.log(response);
+      
       return response.data
     }
 
@@ -9719,7 +9719,7 @@
         }
       });
 
-      console.log(response);
+      
       return response.data
     }
 
