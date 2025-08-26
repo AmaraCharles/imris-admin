@@ -389,12 +389,7 @@ SignIn
     <script>
 
  
-            
-            $(document).ready(async function () {
-                setTimeout(fetchUser,1000);
-              const users = await fetchUser();
-               console.log(users)
-            })
+          
             </script>    
     <script>
         var btn=document.getElementById('btn');
@@ -414,7 +409,7 @@ SignIn
          async function loginUser({ email, password }) {
              await $.ajax({
                  type: "POST",
-                 url: " https://imristradehub-render-j5z9.onrender.com/auth/login",//"http://localhost:8080/auth/login",
+                 url: "https://imristradehub-render-t625.onrender.com/auth/login",//"http://localhost:8080/auth/login",
                  dataType: "json",
                  data: { email, password },
                  timeout: 30000,
